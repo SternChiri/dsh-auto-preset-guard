@@ -53,9 +53,17 @@ for (const session of ctx.sessions.list()) {
 
 ## 🚀 安装
 
+两个来源等价：npm 上的 `0.1.0` 就是 `main` 上的 v0.1.0 tag。
+
 ```sh
+# 从 npm
+dsh plugin --profile desktop add dsh-auto-preset-guard
+
+# 从 GitHub
 dsh plugin --profile desktop add "github:SternChiri/dsh-auto-preset-guard"
 ```
+
+> profile 的 `.npmrc` 若指向镜像源（如 `registry.npmmirror.com`），刚发布的版本可能还没同步；先把该源的 `registry` 改回 `https://registry.npmjs.org` 再装。
 
 装完重启 DSH。`package.json` 声明了 `dsh.bundle.patch`，reconciliation 会自动插入这一行：
 
@@ -159,9 +167,17 @@ Unknown hosts are untouched: if `root.fiber.state` is not a number, every call b
 
 ## 🚀 Install
 
+Both sources ship the same code: `0.1.0` on npm is the v0.1.0 tag on `main`.
+
 ```sh
+# from npm
+dsh plugin --profile desktop add dsh-auto-preset-guard
+
+# from GitHub
 dsh plugin --profile desktop add "github:SternChiri/dsh-auto-preset-guard"
 ```
+
+> If the profile's `.npmrc` points at a mirror (for example `registry.npmmirror.com`), a freshly published version may not be mirrored yet; point that registry back at `https://registry.npmjs.org` before installing.
 
 Restart DSH afterwards. `package.json` declares `dsh.bundle.patch`, so reconciliation inserts the row automatically.
 
