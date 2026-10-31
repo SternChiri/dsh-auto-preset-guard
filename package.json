@@ -1,0 +1,48 @@
+{
+  "name": "dsh-auto-preset-guard",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "description": "Keep the Auto permission preset across DSH restarts: drop the auto-review unload migration during application shutdown, and reopen stored Auto sessions without their integration instead of failing publication",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "permission",
+    "permission-presets",
+    "auto-review",
+    "auto-approve"
+  ],
+  "license": "MIT",
+  "author": "SternChiri",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SternChiri/dsh-auto-preset-guard.git"
+  },
+  "homepage": "https://github.com/SternChiri/dsh-auto-preset-guard#readme",
+  "bugs": {
+    "url": "https://github.com/SternChiri/dsh-auto-preset-guard/issues"
+  },
+  "engines": {
+    "node": "^22.19 || >=24",
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "scripts": {
+    "test": "node test/verify.mjs && node test/proxy-check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

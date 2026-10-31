@@ -1,0 +1,6 @@
+# One always-on host row. It must load after the permission owner
+# (@deepseek-ai/dsh-permission-presets) provides `permissionPresets`, which the
+# loader guarantees because the row injects that service.
+- insert:
+    - id: dsh-auto-preset-guard
+      name: dsh-auto-preset-guard
