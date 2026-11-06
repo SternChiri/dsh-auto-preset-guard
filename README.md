@@ -13,6 +13,8 @@
 
 ---
 
+> **状态：上游已修复，本插件不再需要。** DSH 从 `0.2.2-rc.1` 起，自动审查的退场迁移已带 `ctx.root.fiber.state === ACTIVE` 判断（上游提交 `4923f3cb`「fix(auto-review): preserve Auto during application shutdown」），退出应用不再改写会话。仓库与 npm 包保持原样，供仍在 `0.2.1-rc.*` 上的环境使用。
+
 ## 🌟 这是什么
 
 会话里选过 **自动审批**（`auto`），关掉 DSH 再打开，它变成了 **完全权限**（`danger-full-access`，审批策略 `never`）。
@@ -128,6 +130,8 @@ MIT —— 详见 [LICENSE](LICENSE)。
 # dsh-auto-preset-guard
 
 **Keep the Auto permission preset across DSH restarts — quitting no longer rewrites it to Full access.**
+
+> **Status: fixed upstream, no longer needed.** From DSH `0.2.2-rc.1` the auto-review disposer checks `ctx.root.fiber.state === ACTIVE` before migrating (`4923f3cb`, "fix(auto-review): preserve Auto during application shutdown"), so quitting the app no longer rewrites a session. The repository and the npm package stay as they are for environments still on `0.2.1-rc.*`.
 
 ## 🌟 What this is
 
